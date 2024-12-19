@@ -2,50 +2,33 @@ package ru.vadim.pizza.ru.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.vadim.pizza.ru.model.User;
-import ru.vadim.pizza.ru.repository.UserRepository;
+import ru.vadim.pizza.ru.entity.User;
+import ru.vadim.pizza.ru.repository.UserJpaRepository;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    private UserRepository repository;
-
     @Autowired
-    public UserServiceImpl(UserRepository repository) {
-        this.repository = repository;
-    }
+    private UserJpaRepository repository;
 
     @Override
     public List<User> getAll() {
-        return repository.getAll();
+        return repository.findAll();
     }
 
     @Override
     public User create(User user) {
-        return repository.create(user);
+        return null;
     }
 
     @Override
-    public User getByLogin(String login) {
-        return repository.getByLogin(login);
+    public User getById(Long id) {
+        return null;
     }
 
     @Override
-    public void deleteByLogin(String login) {
-        repository.deleteByLogin(login);
+    public void deleteById(Long id) {
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

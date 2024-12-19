@@ -1,10 +1,11 @@
-package ru.vadim.pizza.ru.repository;
+package ru.vadim.pizza.ru.service.old;
 
-import ru.vadim.pizza.ru.model.User;
+import ru.vadim.pizza.ru.entity.User;
 
 import java.util.List;
 
-public interface UserRepository {
+@Deprecated
+public interface UserServiceJDBC {
 
     List<User> getAll();
 

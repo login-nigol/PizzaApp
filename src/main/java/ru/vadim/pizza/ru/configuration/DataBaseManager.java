@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 @Deprecated
-@Component
+//@Component
 public class DataBaseManager {  // коннектор - устанавливает подключение к базе данных
 
 //  @Value() - читает из конфигурации приложения, значение переменной

@@ -3,7 +3,7 @@ package ru.vadim.pizza.ru.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.vadim.pizza.ru.model.User;
+import ru.vadim.pizza.ru.entity.User;
 import ru.vadim.pizza.ru.service.UserService;
 
 import java.util.List;
@@ -12,12 +12,8 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private UserService service;
-
     @Autowired
-    public UserController(UserService service) {
-        this.service = service;
-    }
+    private UserService service;
 
     @Operation(summary = "Список всех пользователей")
     @GetMapping
@@ -27,21 +23,32 @@ public class UserController {
 
     @Operation(summary = "Создаёт пользователя")
     @PostMapping
-    public User create(@RequestBody User user) {
-        return service.create(user);
+    public User create() {
+        return null;
     }
 
-    @Operation(summary = "Ищет пользователя по логину")
-    @GetMapping("/{login}")
-    public User getByLogin(@PathVariable String login) {
-        return service.getByLogin(login);
+    @GetMapping("/{id}")
+    public User getById(){
+        return null;
     }
 
-    @Operation(summary = "Удаляет пользователя")
-    @DeleteMapping("/{login}")
-    public void deleteByLogin(@PathVariable String login) {
-        service.deleteByLogin(login);
+    @DeleteMapping("/{id}")
+    void deleteById(){
+        //
     }
+
+
+//    @Operation(summary = "Ищет пользователя по логину")
+//    @GetMapping("/{login}")
+//    public User getByLogin(@PathVariable String login) {
+//        return service.getByLogin(login);
+//    }
+
+//    @Operation(summary = "Удаляет пользователя")
+//    @DeleteMapping("/{login}")
+//    public void deleteByLogin(@PathVariable String login) {
+//        service.deleteByLogin(login);
+//    }
 }
 
 
