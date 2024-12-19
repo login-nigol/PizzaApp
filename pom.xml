@@ -34,6 +34,19 @@
             <version>42.7.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--JDBC Template-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!--Deprecated-->
         <!--включает в себя @PostConstruct и @PreDestroy-->
         <dependency>
             <groupId>jakarta.annotation</groupId>

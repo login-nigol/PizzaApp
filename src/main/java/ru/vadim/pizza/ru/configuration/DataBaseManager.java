@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+@Deprecated
 @Component
 public class DataBaseManager {  // коннектор - устанавливает подключение к базе данных
 
