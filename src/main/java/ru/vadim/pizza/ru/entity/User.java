@@ -32,8 +32,12 @@ public class User {
     private String information;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id")  // колонка будет создана в таблице адресов
     private List<Address> addresses = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "disc_card_id", referencedColumnName = "id")  // колонка создастся в пользователе
+    private DiscountCard discountCard;
 
     public User() {
         //
@@ -93,5 +97,13 @@ public class User {
 
     public void setAddresses(List<Address> addresses) {
         this.addresses = addresses;
+    }
+
+    public DiscountCard getDiscountCard() {
+        return discountCard;
+    }
+
+    public void setDiscountCard(DiscountCard discountCard) {
+        this.discountCard = discountCard;
     }
 }
