@@ -3,6 +3,7 @@ package ru.vadim.pizza.ru.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.vadim.pizza.ru.entity.User;
+import ru.vadim.pizza.ru.service.interfaces.UserService;
 import ru.vadim.pizza.ru.repository.UserJpaRepository;
 
 import java.util.List;
@@ -20,15 +21,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User create(User user) {
-        return null;
+        return repository.save(user);
     }
 
     @Override
     public User getById(Long id) {
-        return null;
+        return repository.findById(id).get();
     }
 
     @Override
     public void deleteById(Long id) {
+        repository.deleteById(id);
     }
 }

@@ -23,6 +23,11 @@ public class User {
 
     private String email;
 
+    private String userInfo;
+
+    @Column(name = "description")
+    private String information;
+
     public User() {
         //
     }

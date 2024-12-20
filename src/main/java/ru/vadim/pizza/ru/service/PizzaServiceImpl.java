@@ -2,29 +2,26 @@ package ru.vadim.pizza.ru.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.vadim.pizza.ru.model.Pizza;
-import ru.vadim.pizza.ru.repository.PizzaRepository;
+import ru.vadim.pizza.ru.entity.Pizza;
+import ru.vadim.pizza.ru.service.interfaces.PizzaService;
+import ru.vadim.pizza.ru.repository.PizzaJpaRepository;
 
 import java.util.List;
 
 @Service
 public class PizzaServiceImpl implements PizzaService {
 
-    private PizzaRepository repository;
-
     @Autowired
-    public PizzaServiceImpl(PizzaRepository repository) {
-        this.repository = repository;
-    }
+    private PizzaJpaRepository repository;
 
     @Override
     public List<Pizza> getAll() {
-        return repository.getAll();
+        return null;
     }
 
     @Override
     public Pizza getByTitle(String title) {
-        return repository.getByTitle(title);
+        return null;
     }
 }
 

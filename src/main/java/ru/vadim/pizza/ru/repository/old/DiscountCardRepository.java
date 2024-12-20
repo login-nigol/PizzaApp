@@ -1,10 +1,11 @@
-package ru.vadim.pizza.ru.service;
+package ru.vadim.pizza.ru.repository.old;
 
-import ru.vadim.pizza.ru.model.DiscountCard;
+import ru.vadim.pizza.ru.entity.DiscountCard;
 
 import java.util.List;
 
-public interface DiscountCardService {
+@Deprecated
+public interface DiscountCardRepository {
 
     List<DiscountCard> getAll();
 

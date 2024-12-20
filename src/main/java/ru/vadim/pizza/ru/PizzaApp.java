@@ -1,13 +1,6 @@
 package ru.vadim.pizza.ru;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import ru.vadim.pizza.ru.controller.PizzaController;
-import ru.vadim.pizza.ru.model.Pizza;
-
-import java.util.List;
 
 /**
  * @ComponentScan - указывает путь для сканирования пакетов, для поиска

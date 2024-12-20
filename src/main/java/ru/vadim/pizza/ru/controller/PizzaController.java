@@ -2,8 +2,8 @@ package ru.vadim.pizza.ru.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.vadim.pizza.ru.service.PizzaService;
-import ru.vadim.pizza.ru.model.Pizza;
+import ru.vadim.pizza.ru.service.interfaces.PizzaService;
+import ru.vadim.pizza.ru.entity.Pizza;
 
 import java.util.List;
 
@@ -11,12 +11,8 @@ import java.util.List;
 @RequestMapping("/api/pizzas")
 public class PizzaController {
 
-    private PizzaService service;
-
     @Autowired
-    public PizzaController(PizzaService service) {
-        this.service = service;
-    }
+    private PizzaService service;
 
     @GetMapping
     public List<Pizza> getAll() {

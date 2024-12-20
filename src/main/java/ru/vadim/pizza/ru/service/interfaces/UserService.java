@@ -1,4 +1,4 @@
-package ru.vadim.pizza.ru.service;
+package ru.vadim.pizza.ru.service.interfaces;
 
 import ru.vadim.pizza.ru.entity.User;
 
@@ -8,9 +8,9 @@ public interface UserService {
 
     List<User> getAll();
 
-    User create(User user);
-
     User getById(Long id);
+
+    User create(User user);
 
     void deleteById(Long id);
 }

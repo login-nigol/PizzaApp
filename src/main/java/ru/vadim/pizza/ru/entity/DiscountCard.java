@@ -1,8 +1,14 @@
-package ru.vadim.pizza.ru.model;
+package ru.vadim.pizza.ru.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "disc_card")
 public class DiscountCard {
 
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private boolean expired;
 
@@ -10,15 +16,15 @@ public class DiscountCard {
         //
     }
 
-    public DiscountCard(String id) {
+    public DiscountCard(Long id) {
         this.id = id;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -1,14 +1,14 @@
-package ru.vadim.pizza.ru.repository;
+package ru.vadim.pizza.ru.repository.old;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
-import ru.vadim.pizza.ru.model.DiscountCard;
+import ru.vadim.pizza.ru.entity.DiscountCard;
 
 import java.util.List;
 
-@Repository("dcardjdbcrepository")
+@Deprecated
+//@Repository("dcardjdbcrepository")
 public class DiscountCardJDBCRepository implements DiscountCardRepository {
 
     @Autowired

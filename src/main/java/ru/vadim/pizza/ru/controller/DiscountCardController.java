@@ -2,9 +2,8 @@ package ru.vadim.pizza.ru.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.vadim.pizza.ru.configuration.DataBaseManager;
-import ru.vadim.pizza.ru.service.DiscountCardService;
-import ru.vadim.pizza.ru.model.DiscountCard;
+import ru.vadim.pizza.ru.service.interfaces.DiscountCardService;
+import ru.vadim.pizza.ru.entity.DiscountCard;
 
 import java.util.List;
 
@@ -55,16 +54,16 @@ public class DiscountCardController {
         cardService.deleteById(id);
     }
 
-    @PostMapping("/expired/{id}")
-    public void setExpired(@PathVariable String id) {
-        cardService.setExpired(id);
-    }
-
-    // http://localhost:8080/api/discountcards/filter?expired=false
-    @GetMapping("/filter")
-    public List<DiscountCard> getAllByState(@RequestParam(name = "expired") boolean expired) {
-        return cardService.filter(expired);
-    }
+//    @PostMapping("/expired/{id}")
+//    public void setExpired(@PathVariable String id) {
+//        cardService.setExpired(id);
+//    }
+//
+//    // http://localhost:8080/api/discountcards/filter?expired=false
+//    @GetMapping("/filter")
+//    public List<DiscountCard> getAllByState(@RequestParam(name = "expired") boolean expired) {
+//        return cardService.filter(expired);
+//    }
 }
 
 

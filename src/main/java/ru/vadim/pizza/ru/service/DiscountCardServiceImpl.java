@@ -1,10 +1,10 @@
 package ru.vadim.pizza.ru.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import ru.vadim.pizza.ru.model.DiscountCard;
-import ru.vadim.pizza.ru.repository.DiscountCardRepository;
+import ru.vadim.pizza.ru.entity.DiscountCard;
+import ru.vadim.pizza.ru.repository.DiscountCardJpaRepository;
+import ru.vadim.pizza.ru.service.interfaces.DiscountCardService;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import java.util.List;
 public class DiscountCardServiceImpl implements DiscountCardService {
 
     @Autowired
-    @Qualifier("dcardjdbcrepository")  // указывает какой бин репозитория нужно загрузить
-    private DiscountCardRepository repository;
+//    @Qualifier("dcardjdbcrepository")  // указывает какой бин репозитория нужно загрузить
+    private DiscountCardJpaRepository repository;
 
 //    пример инжекта двух бинов репозитория
 //    @Qualifier("discountCardInMemoryRepository")
@@ -21,33 +21,33 @@ public class DiscountCardServiceImpl implements DiscountCardService {
 
     @Override
     public List<DiscountCard> getAll() {
-        return repository.getAll();
+        return null;
     }
 
     @Override
     public DiscountCard create(DiscountCard card) {
-        return repository.create(card);
+        return null;
     }
 
     @Override
     public DiscountCard getById(String id) {
-        return repository.getById(id);
+        return null;
     }
 
     @Override
     public void deleteById(String id) {
-        repository.deleteById(id);
+
     }
 
-    @Override
-    public void setExpired(String id) {
-        repository.setExpired(id);
-    }
-
-    @Override
-    public List<DiscountCard> filter(boolean expired) {
-        return repository.filter(expired);
-    }
+//    @Override
+//    public void setExpired(String id) {
+//        repository.setExpired(id);
+//    }
+//
+//    @Override
+//    public List<DiscountCard> filter(boolean expired) {
+//        return repository.filter(expired);
+//    }
 }
 
 

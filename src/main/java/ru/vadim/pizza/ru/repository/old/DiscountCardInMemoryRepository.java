@@ -1,14 +1,14 @@
-package ru.vadim.pizza.ru.repository;
+package ru.vadim.pizza.ru.repository.old;
 
-import org.springframework.stereotype.Component;
-import ru.vadim.pizza.ru.model.DiscountCard;
+import ru.vadim.pizza.ru.entity.DiscountCard;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@Component
+@Deprecated
+//@Component
 public class DiscountCardInMemoryRepository implements DiscountCardRepository {
 
     //                                local db
@@ -19,27 +19,27 @@ public class DiscountCardInMemoryRepository implements DiscountCardRepository {
     }
 
     private void init() {
-        DiscountCard card1 = new DiscountCard("card1");
-        DiscountCard card2 = new DiscountCard("card2");
-        DiscountCard card3 = new DiscountCard("card3");
-        storage.put(card1.getId(), card1);
-        storage.put(card2.getId(), card2);
-        storage.put(card3.getId(), card3);
+//        DiscountCard card1 = new DiscountCard("card1");
+//        DiscountCard card2 = new DiscountCard("card2");
+//        DiscountCard card3 = new DiscountCard("card3");
+//        storage.put(card1.getId(), card1);
+//        storage.put(card2.getId(), card2);
+//        storage.put(card3.getId(), card3);
     }
 
-    @Override
+//    @Override
     public List<DiscountCard> getAll() {
         return storage.values().stream().toList();
     }
 
-    @Override
+//    @Override
     public DiscountCard create(DiscountCard card) {
         DiscountCard discountCard = new DiscountCard(card.getId());
-        storage.put(card.getId(), discountCard);
-        return discountCard;
+//        storage.put(card.getId(), discountCard);
+        return null;
     }
 
-    @Override
+//    @Override
     public DiscountCard getById(String id)  {
         return storage.get(id);
     }

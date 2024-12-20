@@ -1,6 +1,6 @@
-package ru.vadim.pizza.ru.service;
+package ru.vadim.pizza.ru.service.interfaces;
 
-import ru.vadim.pizza.ru.model.Pizza;
+import ru.vadim.pizza.ru.entity.Pizza;
 
 import java.util.List;
 

@@ -10,12 +10,8 @@ import java.util.List;
 //@Service
 public class UserServiceJDBCImpl implements UserServiceJDBC {
 
-    private UserRepository repository;
-
     @Autowired
-    public UserServiceJDBCImpl(UserRepository repository) {
-        this.repository = repository;
-    }
+    private UserRepository repository;
 
     @Override
     public List<User> getAll() {

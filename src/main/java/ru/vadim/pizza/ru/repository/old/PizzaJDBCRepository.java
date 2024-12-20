@@ -1,11 +1,9 @@
-package ru.vadim.pizza.ru.repository;
+package ru.vadim.pizza.ru.repository.old;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 import ru.vadim.pizza.ru.configuration.DataBaseManager;
 import ru.vadim.pizza.ru.enums.PizzaType;
-import ru.vadim.pizza.ru.model.Pizza;
+import ru.vadim.pizza.ru.entity.Pizza;
 
 import java.sql.PreparedStatement;
 import java.sql.Connection;
@@ -16,13 +14,13 @@ import java.util.List;
 
 @Deprecated
 //@Component
-@Primary
+//@Primary
 public class PizzaJDBCRepository implements PizzaRepository {
 
-    @Autowired
+//    @Autowired
     private DataBaseManager dbManager;
 
-    @Override
+//    @Override
     public List<Pizza> getAll() {
         String sql = "SELECT * FROM pizzas";
         Connection connection = dbManager.getConnection();
@@ -34,8 +32,8 @@ public class PizzaJDBCRepository implements PizzaRepository {
                 String title = resultSet.getString("title");
                 String type = resultSet.getString("type");
                 PizzaType pizzaType = PizzaType.valueOf(type);
-                Pizza pizza = new Pizza(title, pizzaType);
-                pizzaList.add(pizza);
+//                Pizza pizza = new Pizza(title, pizzaType);
+//                pizzaList.add(pizza);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -43,7 +41,7 @@ public class PizzaJDBCRepository implements PizzaRepository {
         return pizzaList;
     }
 
-    @Override
+//    @Override
     public Pizza getByTitle(String title) {
         Connection connection = dbManager.getConnection();
         String sql = "SELECT * FROM pizzas WHERE title = ?";
@@ -55,7 +53,7 @@ public class PizzaJDBCRepository implements PizzaRepository {
                 String pizzaTitle = resultSet.getString("title");
                 String type = resultSet.getString("type");
                 PizzaType pizzaType = PizzaType.valueOf(type);
-                return new Pizza(pizzaTitle, pizzaType);
+//                return new Pizza(pizzaTitle, pizzaType);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
