@@ -1,10 +1,10 @@
 package ru.vadim.pizza.ru.controller;
 
-import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.vadim.pizza.ru.entity.User;
+import io.swagger.v3.oas.annotations.Operation;
 import ru.vadim.pizza.ru.service.interfaces.UserService;
+import ru.vadim.pizza.ru.entity.User;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class UserController {
 
     @Operation(summary = "Создаёт пользователя")
     @PostMapping
-    public User create(User user) {
+    public User create(@RequestBody User user) {
         return service.create(user);
     }
 
@@ -31,6 +31,21 @@ public class UserController {
     @GetMapping("/{id}")
     public User getById(@PathVariable Long id){
         return service.getById(id);
+    }
+
+    @GetMapping("/search")
+    public User getByName(@RequestParam(name = "name" ) String name){
+        return service.getByName(name);
+    }
+
+    @PostMapping("/equals_password")
+    public List<User> getWithEqualsPassword(@RequestBody String password){
+        return service.getWithEqualsPassword(password);
+    }
+
+    @PostMapping("/with_info")
+    public List<User> getUsersWithInfo(@RequestBody String info){
+        return service.getUserWithUserInfo(info);
     }
 
     @Operation(summary = "Удаляет пользователя по ID")

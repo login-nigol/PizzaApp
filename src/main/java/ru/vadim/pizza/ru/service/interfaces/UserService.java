@@ -8,9 +8,15 @@ public interface UserService {
 
     List<User> getAll();
 
+    User create(User user);
+
     User getById(Long id);
 
-    User create(User user);
+    User getByName(String name);
+
+    List<User> getWithEqualsPassword(String password);
+
+    List<User> getUserWithUserInfo(String usersWithInfo);
 
     void deleteById(Long id);
 }
