@@ -16,5 +16,5 @@ public interface UserJpaRepository extends JpaRepository<User, Long> {
     List<User> findAllByPassword(String password);  // SELECT * FROM shop_users WHERE password =:password
 
     @Query("SELECT u FROM User u WHERE u.userInfo IS NOT NULL")
-    List<User> getUserWithUserInfo(String usersWithInfo);
+    List<User> getUserWithUserInfo(String info);
 }

@@ -50,8 +50,8 @@ public class UserController {
 
     @Operation(summary = "Удаляет пользователя по ID")
     @DeleteMapping("/{id}")
-    void deleteById(@PathVariable Long id){
-        service.deleteById(id);
+    public void delete(@PathVariable Long id){
+        service.delete(id);
     }
 
 

@@ -18,5 +18,5 @@ public interface UserService {
 
     List<User> getUserWithUserInfo(String usersWithInfo);
 
-    void deleteById(Long id);
+    void delete(Long id);
 }

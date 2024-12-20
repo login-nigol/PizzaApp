@@ -11,6 +11,7 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
     @Autowired
     private UserJpaRepository repository;
 
@@ -41,12 +42,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUserWithUserInfo(String usersWithInfo) {
-        return repository.getUserWithUserInfo(usersWithInfo);
+    public List<User> getUserWithUserInfo(String info) {
+        return repository.getUserWithUserInfo(info);
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void delete(Long id) {
         repository.deleteById(id);
     }
 }
